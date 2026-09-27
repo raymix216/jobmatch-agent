@@ -21,9 +21,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="jobmatch", description="JobMatch Agent")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    sub.add_parser("health", help="config loads and process starts").set_defaults(
-        func=cmd_health
-    )
+    sub.add_parser("health", help="config loads and process starts").set_defaults(func=cmd_health)
     sub.add_parser("version", help="print version").set_defaults(func=cmd_version)
     # M1: ingest, score
     # M2: route, eval
