@@ -26,5 +26,5 @@ jobs:
       - name: Test
         run: pytest -q
 
-      # M2: build the image here so docker breakage blocks merge.
-      # M3: run the eval suite here; eval regression blocks merge.
+      - name: Docker build
+        run: docker build -t jobmatch-agent:ci .
